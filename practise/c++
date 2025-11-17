@@ -1,0 +1,25 @@
+// ...existing code...
+#include <iostream>
+using namespace std;
+
+class Add {
+public:
+    int sum(int x, int y) { return x + y; }
+    float sum(int x, float y) { return x + y; }
+    float sum(float x, float y) { return x + y; }
+
+    void display(int v)    { cout << "sum (int): " << v << '\n'; }
+    void display(float v)  { cout << "sum (float): " << v << '\n'; }
+};
+
+int main() {
+    int a = 6, b = 8;
+    float c = 5.98f, d = 34.6756f;
+
+    Add ad;
+    int s1 = ad.sum(a, b);    ad.display(s1);
+    float s2 = ad.sum(a, c);  ad.display(s2);
+    float s3 = ad.sum(c, d);  ad.display(s3);
+
+    return 0;
+}
